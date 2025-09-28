@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Check, X, User, Medal, FileText, ExternalLink } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
 import {
   Dialog,
   DialogContent,
