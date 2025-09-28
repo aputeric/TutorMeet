@@ -245,7 +245,7 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* Decorative healthcare elements */}
+              {/* Decorative elements */}
               <div className="absolute right-0 top-0 w-[300px] h-[300px] bg-emerald-800/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
               <div className="absolute left-0 bottom-0 w-[200px] h-[200px] bg-emerald-700/10 rounded-full blur-3xl -ml-10 -mb-10"></div>
             </CardContent>

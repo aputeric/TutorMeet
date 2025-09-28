@@ -101,8 +101,7 @@ export default function OnboardingPage() {
               Join as a Student
             </CardTitle>
             <CardDescription className="mb-4">
-              Book appointments, consult with tutors, and manage your
-              healthcare journey
+              Book appointments, consult with tutors
             </CardDescription>
             <Button
               className="w-full mt-2 bg-emerald-600 hover:bg-emerald-700"

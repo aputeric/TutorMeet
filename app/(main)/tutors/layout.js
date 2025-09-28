@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Find Tutors - TutorMeet",
-  description: "Browse and book appointments with top healthcare providers",
+  description: "Browse and book appointments with top tier Tutors",
 };
 
 export default async function TutorsLayout({ children }) {
