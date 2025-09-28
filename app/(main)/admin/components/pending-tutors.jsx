@@ -130,7 +130,7 @@ export function PendingTutors({ tutors }) {
       {/* Tutor Details Dialog */}
       {selectedTutor && (
         <Dialog open={!!selectedTutor} onOpenChange={handleCloseDialog}>
-          <DialogContent className="max-w-3xl">
+          <DialogContent className="w-full max-w-4xl md:max-w-5xl">
             <DialogHeader>
               <DialogTitle className="text-xl font-bold text-white">
                 Tutor Verification Details
@@ -141,95 +141,85 @@ export function PendingTutors({ tutors }) {
               </DialogDescription>
             </DialogHeader>
 
-            <div className="space-y-6 py-4">
-              {/* Basic Info */}
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="space-y-1 flex-1">
+            {/* Responsive grid layout for details */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 py-4">
+              {/* LEFT COLUMN */}
+              <div className="space-y-6">
+                {/* Basic Info */}
+                <div className="space-y-2">
                   <h4 className="text-sm font-medium text-muted-foreground">
                     Full Name
                   </h4>
                   <p className="text-base font-medium text-white">
                     {selectedTutor.name}
                   </p>
-                </div>
-                <div className="space-y-1 flex-1">
-                  <h4 className="text-sm font-medium text-muted-foreground">
+                  <h4 className="text-sm font-medium text-muted-foreground mt-4">
                     Email
                   </h4>
                   <p className="text-base font-medium text-white">
                     {selectedTutor.email}
                   </p>
-                </div>
-                <div className="space-y-1 flex-1">
-                  <h4 className="text-sm font-medium text-muted-foreground">
+                  <h4 className="text-sm font-medium text-muted-foreground mt-4">
                     Application Date
                   </h4>
                   <p className="text-base font-medium text-white">
                     {format(new Date(selectedTutor.createdAt), "PPP")}
                   </p>
                 </div>
-              </div>
 
-              <Separator className="bg-emerald-900/20" />
-
-              {/* Professional Details */}
-              <div className="space-y-4">
-                <div className="flex items-center gap-2">
-                  <Medal className="h-5 w-5 text-emerald-400" />
-                  <h3 className="text-white font-medium">
-                    Professional Information
-                  </h3>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-6">
-                  <div className="space-y-1">
-                    <h4 className="text-sm font-medium text-muted-foreground">
-                      Specialty
-                    </h4>
-                    <p className="text-white">{selectedTutor.specialty}</p>
+                {/* Professional Details */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Medal className="h-5 w-5 text-emerald-400" />
+                    <h3 className="text-white font-medium">
+                      Professional Information
+                    </h3>
                   </div>
-
-                  <div className="space-y-1">
-                    <h4 className="text-sm font-medium text-muted-foreground">
-                      Years of Experience
-                    </h4>
-                    <p className="text-white">
-                      {selectedTutor.experience} years
-                    </p>
-                  </div>
-
-                  <div className="space-y-1 col-span-2">
-                    <h4 className="text-sm font-medium text-muted-foreground">
-                      Credentials
-                    </h4>
-                    <div className="flex items-center">
-                      <a
-                        href={selectedTutor.credentialUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-emerald-400 hover:text-emerald-300 flex items-center"
-                      >
-                        View Credentials
-                        <ExternalLink className="h-4 w-4 ml-1" />
-                      </a>
-                    </div>
-                  </div>
+                  <h4 className="text-sm font-medium text-muted-foreground">
+                    Specialty
+                  </h4>
+                  <p className="text-white">{selectedTutor.specialty}</p>
+                  <h4 className="text-sm font-medium text-muted-foreground mt-4">
+                    Years of Experience
+                  </h4>
+                  <p className="text-white">
+                    {selectedTutor.experience} years
+                  </p>
                 </div>
               </div>
 
-              <Separator className="bg-emerald-900/20" />
-
-              {/* Description */}
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <FileText className="h-5 w-5 text-emerald-400" />
-                  <h3 className="text-white font-medium">
-                    Service Description
-                  </h3>
+              {/* RIGHT COLUMN */}
+              <div className="space-y-6">
+                {/* Credentials */}
+                <div className="space-y-2">
+                  <h4 className="text-sm font-medium text-muted-foreground">
+                    Credentials
+                  </h4>
+                  <div className="flex items-center">
+                    <a
+                      href={selectedTutor.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-emerald-400 hover:text-emerald-300 flex items-center"
+                    >
+                      View Credentials
+                      <ExternalLink className="h-4 w-4 ml-1" />
+                    </a>
+                  </div>
                 </div>
-                <p className="text-muted-foreground whitespace-pre-line">
-                  {selectedTutor.description}
-                </p>
+
+                {/* Description */}
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2">
+                    <FileText className="h-5 w-5 text-emerald-400" />
+                    <h3 className="text-white font-medium">
+                      Service Description
+                    </h3>
+                  </div>
+                  <p className="text-muted-foreground whitespace-pre-line">
+                    {selectedTutor.description}
+                  </p>
+                </div>
               </div>
             </div>
 
